@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="nav-wrapper teal">
             <div className="container">
                 <Link to="/" className="brand-logo">
-                    DESC Simplify
+                    DESC In Kind Portal
                 </Link>
                 <ul className="right hide-on-med-and-down">
                     <li>

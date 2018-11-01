@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import NotFoundPage from './NotFoundPage';
+import RequestCreationPage from './RequestCreation/RequestCreationPage';
 import './App.css';
 
 class AppContent extends React.Component {
@@ -39,7 +40,7 @@ class AppContent extends React.Component {
                             className="grey-text center-align"
                             style={{ margin: '0', padding: '30px 0 0 0' }}
                         >
-                            DESC Simplify Project
+                            DESC In Kind Portal
                         </h1>
                         {this.state.isDataFetched && (
                             <div className="container" style={{ marginTop: '75px' }}>
@@ -77,6 +78,9 @@ class App extends React.Component {
                             <Route exact path="/" component={AppContent} />
                             <Route exact path="/login" component={LoginPage} />
                             <Route exact path="/signup" component={SignupPage} />
+
+                            <Route exact path="/create" component={RequestCreationPage} />
+
                             <Route component={NotFoundPage} />
                         </Switch>
                     </div>
