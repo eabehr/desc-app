@@ -4,7 +4,7 @@
 class ItemOptionsUtility {
     constructor() {
         this.state = {
-            availableItems : require("./AvailableItems")
+            availableItems: require("./AvailableItems")
         }
     }
 
@@ -24,6 +24,13 @@ class ItemOptionsUtility {
         } else {
             return [];
         }
+    }
+
+    /**
+     * Returns true if itemType in category has gender options
+     */
+    isItemGendered(category, itemType) {
+        return (((this.state.availableItems || {})[category] || {})[itemType] || {}).gender;
     }
 }
 

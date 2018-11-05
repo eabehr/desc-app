@@ -9,8 +9,18 @@ module.exports = {
        "conditioner": {}
     },
     "clothing" : {
-        "shirt" : {},
-        "coat" : {}   
+        "shirt" : {
+            "gender" : {
+                "male" : {},
+                "female" : {}
+            }
+        },
+        "coat" : {
+            "gender" : {
+                "male" : {},
+                "female" : {}
+            }
+        }   
     },
     "engagement" : {
         "book" : {},
