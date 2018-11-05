@@ -44,6 +44,8 @@ class RequestCreationPage extends React.Component {
                     onChange={this.handleChange}
                 />
 
+                <ItemRequest />
+
             </div>
         );
     }
