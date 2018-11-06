@@ -1,27 +1,19 @@
 import React from 'react';
 import ItemRequest from './ItemRequest'
+import RequestedItems from './RequestedItems';
 
 class RequestCreationPage extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            /**
-             * user info of request creator
-             * client id
-             * notes
-             * items:
-             *  category
-             *  item type
-             *  gender
-             *  style
-             *  size
-             *  count
-             *  urgency
-             */
+            requestCreator: {},
+
             clientId: '',
-            items: []
+            itemsInRequest: [],
         };
+
+        this.handleItemAdded = this.handleItemAdded.bind(this);
     }
 
     handleChange = evt => {
@@ -31,9 +23,15 @@ class RequestCreationPage extends React.Component {
         });
     };
 
+    handleItemAdded(item) {
+        this.setState({ 
+            itemsInRequest: this.state.itemsInRequest.concat([item])
+        });
+    };
+
     render() {
         return (
-            <div className="card-panel">
+            <div className="container card-panel">
                 <h5>New Request</h5>
 
                 <p>Client Id</p>
@@ -44,8 +42,9 @@ class RequestCreationPage extends React.Component {
                     onChange={this.handleChange}
                 />
 
-                <ItemRequest />
+                <ItemRequest onItemAdded={this.handleItemAdded}/>
 
+                <RequestedItems />
             </div>
         );
     }
