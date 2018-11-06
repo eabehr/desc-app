@@ -7,6 +7,7 @@ class ItemRequest extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            // TODO: nest item values in currentItem
             category: '',
             itemType: '',
             gender: '',
@@ -17,12 +18,17 @@ class ItemRequest extends React.Component {
 
         this.itemOptionsUtility = new ItemOptionsUtility();
         this.handleInput = this.handleInput.bind(this);
+        this.handleAddItem = this.handleAddItem.bind(this);
     }
 
     handleInput(event) {
         this.setState(
             { [event.target.name]: event.target.value }
         );
+    }
+
+    handleAddItem(event) {
+        this.props.onItemAdded(this.state);
     }
 
     getCategories() {
@@ -118,7 +124,7 @@ class ItemRequest extends React.Component {
                     {this.notesInput()}
                 </div>
                 <div className="card-action">
-                    <a className="btn">Add item</a>
+                    <a className="btn" onClick={this.handleAddItem}>Add item</a>
                 </div>
             </form>
         );
