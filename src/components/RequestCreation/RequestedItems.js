@@ -4,14 +4,23 @@ class RequestedItems extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {};
+    }
+
+    getRequestedItems() {
+        if (this.props.items.length > 0) {
+            return <p>TODO: Add item info here</p>
+        } else {
+            return <p>Your cart is empty</p>
+        }
     }
 
     render() {
         return (
             <div className="container card-panel">
-                <p>Items to request:</p>
-
+                <h6>Items to request:</h6>
+                
+                {this.getRequestedItems()}
             </div>
         );
     }

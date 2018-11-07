@@ -24,6 +24,7 @@ class RequestCreationPage extends React.Component {
     };
 
     handleItemAdded(item) {
+        // TODO: validate item before adding
         this.setState({ 
             itemsInRequest: this.state.itemsInRequest.concat([item])
         });
@@ -44,7 +45,7 @@ class RequestCreationPage extends React.Component {
 
                 <ItemRequest onItemAdded={this.handleItemAdded}/>
 
-                <RequestedItems />
+                <RequestedItems items={this.state.itemsInRequest}/>
             </div>
         );
     }
