@@ -11,6 +11,8 @@ class RequestCreationPage extends React.Component {
 
             clientId: '',
             itemsInRequest: [],
+
+            requestStatus: "NEW"
         };
 
         this.handleItemAdded = this.handleItemAdded.bind(this);
@@ -46,6 +48,10 @@ class RequestCreationPage extends React.Component {
                 <ItemRequest onItemAdded={this.handleItemAdded}/>
 
                 <RequestedItems items={this.state.itemsInRequest}/>
+
+                <div className="card-action">
+                    <a className="btn">Submit Request</a>
+                </div>
             </div>
         );
     }
