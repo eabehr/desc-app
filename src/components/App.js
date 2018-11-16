@@ -6,6 +6,7 @@ import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import NotFoundPage from './NotFoundPage';
 import RequestCreationPage from './RequestCreation/RequestCreationPage';
+import RequestInboxPage from './RequestInbox/RequestInboxPage';
 import './App.css';
 
 class AppContent extends React.Component {
@@ -80,6 +81,7 @@ class App extends React.Component {
                             <Route exact path="/signup" component={SignupPage} />
 
                             <Route exact path="/create" component={RequestCreationPage} />
+                            <Route exact path="/inbox" component={RequestInboxPage} />
 
                             <Route component={NotFoundPage} />
                         </Switch>
