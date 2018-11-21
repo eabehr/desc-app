@@ -1,14 +1,14 @@
 module.exports = {
-    "household" : {
+    "Household" : {
         "bedding" : {},
         "pillow" : {},
         "mug" : {}
     },
-    "hygiene" : {
+    "PersonalHygiene" : {
        "shampoo" : {},
        "conditioner": {}
     },
-    "clothing" : {
+    "Clothing" : {
         "shirt" : {
             "gender" : {
                 "male" : {},
@@ -22,7 +22,7 @@ module.exports = {
             }
         }   
     },
-    "engagement" : {
+    "Engagement" : {
         "book" : {},
         "cards" : {}
     }

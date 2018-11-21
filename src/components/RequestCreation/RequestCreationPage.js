@@ -16,6 +16,7 @@ class RequestCreationPage extends React.Component {
         };
 
         this.handleItemAdded = this.handleItemAdded.bind(this);
+        this.submitRequest = this.submitRequest.bind(this);
     }
 
     handleChange = evt => {
@@ -29,6 +30,39 @@ class RequestCreationPage extends React.Component {
         // TODO: validate item before adding
         this.setState({ 
             itemsInRequest: this.state.itemsInRequest.concat([item])
+        });
+    };
+
+    submitRequest() {
+        let oneItem = this.state.itemsInRequest[0];
+
+        let body = {
+            "clientId": this.state.clientId,
+            "submittedBy": "5bc50dabf5aa6ae120b49005", // use this id until user context is implemented
+            "numberOfItems": oneItem.count,
+            "urgency": "survival",
+            "status": "active",
+            "note": oneItem.notes,
+            "itemCategory": oneItem.category,
+            "name": oneItem.itemType
+        };
+        fetch('http://localhost:3000/api/items', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        })
+        .then(function(response) {
+            console.log(response);
+            if (response.ok && response.status === 200) {
+                return response.json();
+            } else {
+                return Promise.reject({ message: 'err' });
+            }
+        })
+        .then(function(data) {
+            console.log(data);
+        }).catch(function(err) {
+            console.log(err);
         });
     };
 
@@ -50,7 +84,7 @@ class RequestCreationPage extends React.Component {
                 <RequestedItems items={this.state.itemsInRequest}/>
 
                 <div className="card-action">
-                    <a className="btn">Submit Request</a>
+                    <a className="btn" onClick={this.submitRequest}>Submit Request</a>
                 </div>
             </div>
         );
