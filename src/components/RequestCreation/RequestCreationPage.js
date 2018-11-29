@@ -60,8 +60,15 @@ class RequestCreationPage extends React.Component {
             }
         })
         .then(function(data) {
+            if (data.success) {
+                M.toast({html: 'Your request has been created'})
+                // navigate to home
+            } else {
+                M.toast({html: 'Error'})
+            }
             console.log(data);
         }).catch(function(err) {
+            M.toast({html: 'Error'})
             console.log(err);
         });
     };
