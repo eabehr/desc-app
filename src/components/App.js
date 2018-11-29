@@ -41,7 +41,7 @@ class AppContent extends React.Component {
                             className="grey-text center-align"
                             style={{ margin: '0', padding: '30px 0 0 0' }}
                         >
-                            DESC In Kind Portal
+                            Welcome to the DESC In Kind Portal
                         </h1>
                         {this.state.isDataFetched && (
                             <div className="container" style={{ marginTop: '75px' }}>

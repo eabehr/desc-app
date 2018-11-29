@@ -15,6 +15,12 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/login">Login</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/create">Create Request</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/inbox">View Requests</NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>
