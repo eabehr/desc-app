@@ -8,6 +8,8 @@ class RequestInboxPage extends React.Component {
         this.state = {
             items : []
         };
+        this.handleRowClick = this.handleRowClick.bind(this);
+        
     }
 
     componentDidMount() {
@@ -23,11 +25,23 @@ class RequestInboxPage extends React.Component {
 
     getRequestRows() {
         return (
-            
-                this.state.items.map(function(item, i) {
-                    return <RequestRow item={item}/>
-                })
+            this.state.items.map(function(item, i) {
+                return (<tr>
+                <td>{ item.submittedBy.name.first + " " + item.submittedBy.name.last}</td>
+                <td>{ item.name }</td>
+                <td>{ item.numberOfItems }</td>
+                <td>{ item.createdAt }</td> {/* TODO: format into a nicer date */}
+                <td>{ item.status }</td>
+                </tr>);
+
+
+                // return <RequestRow item={item}/>
+            })
         );
+    }
+
+    handleRowClick() {
+        
     }
 
     render() {
