@@ -23,20 +23,25 @@ class RequestInboxPage extends React.Component {
         });
     }
 
+    getDate(createdAt) {
+        var date = new Date(createdAt)
+        return date.toDateString() + ", " + date.toLocaleTimeString();
+    }
+
     getRequestRows() {
         return (
             this.state.items.map(function(item, i) {
-                return (<tr>
-                <td>{ item.submittedBy.name.first + " " + item.submittedBy.name.last}</td>
-                <td>{ item.name }</td>
-                <td>{ item.numberOfItems }</td>
-                <td>{ item.createdAt }</td> {/* TODO: format into a nicer date */}
-                <td>{ item.status }</td>
+                return (<tr key={i}>
+                    <td>{ item.submittedBy.name.first + " " + item.submittedBy.name.last}</td>
+                    <td>{ item.name }</td>
+                    <td>{ item.numberOfItems }</td>
+                    <td>{ this.getDate(item.createdAt) }</td>
+                    <td>{ item.status }</td>
                 </tr>);
 
 
                 // return <RequestRow item={item}/>
-            })
+            }, this)
         );
     }
 
