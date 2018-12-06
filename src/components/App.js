@@ -6,7 +6,8 @@ import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import NotFoundPage from './NotFoundPage';
 import RequestCreationPage from './RequestCreation/RequestCreationPage';
-import RequestInboxPage from './RequestInbox/RequestInboxPage';
+import RequestInboxPageTable from './RequestInbox/RequestInboxPageTable';
+import RequestInboxPageList from './RequestInbox/RequestInboxPageList';
 import './App.css';
 
 class AppContent extends React.Component {
@@ -76,12 +77,13 @@ class App extends React.Component {
                     <div>
                         <Navbar />
                         <Switch>
-                            <Route exact path="/" component={AppContent} />
+                            <Route exact path="/" component={LoginPage} />
                             <Route exact path="/login" component={LoginPage} />
                             <Route exact path="/signup" component={SignupPage} />
 
                             <Route exact path="/create" component={RequestCreationPage} />
-                            <Route exact path="/inbox" component={RequestInboxPage} />
+                            <Route exact path="/inbox" component={RequestInboxPageList} />
+                            <Route exact path="/inboxTable" component={RequestInboxPageTable} />
 
                             <Route component={NotFoundPage} />
                         </Switch>

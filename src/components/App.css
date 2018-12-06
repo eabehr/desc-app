@@ -10,3 +10,23 @@ header {
 nav .active {
     background-color: #00796b;
 }
+
+
+.desc-logo {
+    margin-right: 2rem;
+}
+
+.requestCreationForm {
+   
+    margin-left: auto;
+  margin-right: auto;
+}
+
+.requestCreationForm input#clientId {
+    
+}
+
+.eachRow {
+    width: 100%;
+    margin-bottom: 0px;
+}

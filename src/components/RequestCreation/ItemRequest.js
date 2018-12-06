@@ -13,7 +13,7 @@ class ItemRequest extends React.Component {
             gender: '',
             count: 1,
             urgency: 'standard',
-            notes: ''
+            note: ''
         };
 
         this.itemOptionsUtility = new ItemOptionsUtility();
@@ -27,8 +27,24 @@ class ItemRequest extends React.Component {
         );
     }
 
-    handleAddItem(event) {
-        this.props.onItemAdded(this.state);
+    handleAddItem() {
+        var stateCopy = {
+            category: this.state.category,
+            itemType: this.state.itemType,
+            gender: this.state.gender,
+            count: this.state.count,
+            urgency: this.state.urgency,
+            note: this.state.note
+        }
+
+        this.props.onItemAdded(stateCopy);
+
+        this.state.category = '';
+        this.state.itemType = '';
+        this.state.gender = '';
+        this.state.count = 1;
+        this.state.urgency = 'standard';
+        this.state.note = '';
     }
 
     getCategories() {
@@ -100,16 +116,16 @@ class ItemRequest extends React.Component {
     notesInput() {
         return <input
             type="text"
-            placeholder="Notes"
-            name="notes"
-            value={this.state.notes}
+            placeholder="Note"
+            name="note"
+            value={this.state.note}
             onChange={this.handleInput}
         />
     }
 
     render() {
         return (
-            <form className="container card-panel">
+            <form className="card-panel">
                 <div className="card-content">
                     {this.categorySelection()}
                     {this.itemTypeSelection()}

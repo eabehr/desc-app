@@ -3,7 +3,10 @@ module.exports = {
         "bedding" : {},
         "pillow" : {},
         "plates" : {},
-        "cutlery" : {}
+        "cutlery" : {},
+        'pots and pans': {},
+        'napkins/paper towels' : {},
+        'shower curtain' : {}
     },
 
     "PersonalHygiene" : {
@@ -12,7 +15,11 @@ module.exports = {
         "conditioner": {},
         "brush/comb": {},
         "toothbrush": {},
-        "toothpaste" : {}
+        "toothpaste" : {},
+        'floss' : {},
+        'feminine pad' : {},
+        'tampons' : {},
+        'toilet paper' : {}
     },
 
     "Clothing" : {
@@ -27,11 +34,12 @@ module.exports = {
                 "male" : {},
                 "female" : {}
             }
-        }   
+        } 
     },
 
     "Engagement" : {
         "artwork" : {},
+        'candy/edible treats' : {},
         "games" : {}
     }
 }

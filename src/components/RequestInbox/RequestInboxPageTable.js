@@ -1,7 +1,7 @@
 import React from 'react';
 import RequestRow from './RequestRow';
 
-class RequestInboxPage extends React.Component {
+class RequestInboxPageTable extends React.Component {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,7 @@ class RequestInboxPage extends React.Component {
             return response.json();
         }).then(data => {
             this.setState({
-                items : data.payload.items
+                items : data.payload.items.reverse()
             });
         });
     }
@@ -52,7 +52,18 @@ class RequestInboxPage extends React.Component {
     render() {
 
         return (
-            <div className="container card-panel">
+            <div className="container">
+
+
+            
+            <div className="card-panel">
+
+            <ul class="tabs">
+                <li class="tab col s3 teal lighten-5"><a href="#test1" class="active teal-text">Active</a></li>
+                <li class="tab col s3"><a href="#test2" class="teal-text text-lighten-3">Approved</a></li>
+                <li class="tab col s3"><a href="#test3" class="teal-text text-lighten-3">Wishlisted</a></li>
+                <li class="tab col s3"><a href="#test4" class="teal-text text-lighten-3">Archived</a></li>
+            </ul>
                 
                 <table className="highlight">
                     <thead>
@@ -69,12 +80,13 @@ class RequestInboxPage extends React.Component {
                         { this.getRequestRows() }
                     </tbody>
                 </table>
+                </div>
             </div>
         );
     }
 }
 
-export default RequestInboxPage;
+export default RequestInboxPageTable;
 
 
 /**
